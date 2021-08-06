@@ -11,6 +11,11 @@ RSpec.describe "Enigma" do
     expect(enigma).to be_a(Enigma)
   end
 
+  it "can determine today's date in a string DDMMYY" do
+    enigma = Enigma.new
+    expect(enigma.todays_date).to eq("060821")
+  end
+
 
 
 end
