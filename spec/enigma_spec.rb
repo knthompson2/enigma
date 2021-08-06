@@ -13,7 +13,7 @@ RSpec.describe "Enigma" do
 
   it "can determine today's date as integer DDMMYY" do
     enigma = Enigma.new
-    expect(enigma.todays_date).to eq(60821)
+    expect(enigma.todays_date).to eq("060821")
   end
 
 
