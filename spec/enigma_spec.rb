@@ -30,7 +30,6 @@ RSpec.describe "Enigma" do
 
   it "can encrypt a string and return a hash of encrypted message, key, value" do
     enigma = Enigma.new
-    shift = Shift.new
     expected = {
     encryption: "keder ohulw",
     key: "02715",
@@ -38,4 +37,13 @@ RSpec.describe "Enigma" do
   }
     expect(enigma.encrypt("hello world", "02715", "040895")).to eq(expected)
   end
+
+  it "can decrypt a string given a shift value" do
+    enigma = Enigma.new
+
+    expect(enigma.decrypt_string("keder ohulw", [3,27,73,20])).to eq("keder ohulw")
+  end
+
+
+
 end
