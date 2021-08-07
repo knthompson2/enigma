@@ -1,8 +1,9 @@
 class Enigma
-  attr_reader :character_set
+  attr_reader :character_set, :shift
 
   def initialize
     @character_set = ("a".."z").to_a << " "
+    @shift = Shift.new
   end
 
   def todays_date
@@ -17,7 +18,7 @@ class Enigma
   end
 
   def encrypt_string(string, shift)
-        message_by_char(string).map.with_index do |letter, index|
+    message_by_char(string).map.with_index do |letter, index|
       if @character_set.index(letter).nil?
         letter
       else
@@ -28,7 +29,17 @@ class Enigma
     end.join
   end
 
-
+  def encrypt(string, key = shift.key_string, date = todays_date)
+    final_key = @shift.key(key)
+    final_offset = @shift.offset(date)
+    shifts = @shift.final_shifts(final_key, final_offset)
+    encryped_message = encrypt_string(string, shifts)
+    encrypt_hash = {
+      :encryption => encryped_message,
+      :key => key,
+      :date => date
+    }
+  end
 
   # def encrypt
 end
