@@ -24,6 +24,9 @@ RSpec.describe "Shift" do
     expect(shift.key("04568")).to eq([04,45,56,68])
   end
 
-
+  it "can create shifts " do
+    shift = Shift.new
+    expect(shift.final_shifts(shift.key("04568"),shift.offset("080621"))).to eq([9,51,60,69])
+  end
 
 end
