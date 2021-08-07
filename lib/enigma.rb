@@ -41,5 +41,17 @@ class Enigma
     }
   end
 
+  def decrypt_string(string, shift)
+    message_by_char(string).map.with_index do |letter, index|
+      if @character_set.index(letter).nil?
+        letter
+      else
+        index_letter = @character_set.index(letter)
+        rotate_letters = @character_set.rotate(-(shift[index % 4]))
+        rotate_letters[index_letter]
+      end
+    end.join
+  end
+
   # def encrypt
 end
