@@ -3,7 +3,6 @@ class Enigma
 
   def initialize
     @character_set = ("a".."z").to_a << " "
-    @shift = Shift.new
   end
 
   def todays_date
@@ -30,9 +29,10 @@ class Enigma
   end
 
   def encrypt(string, key = shift.key_string, date = todays_date)
-    final_key = @shift.key(key)
-    final_offset = @shift.offset(date)
-    shifts = @shift.final_shifts(final_key, final_offset)
+    shift = Shift.new
+    final_key = shift.key(key)
+    final_offset = shift.offset(date)
+    shifts = shift.final_shifts(final_key, final_offset)
     encryped_message = encrypt_string(string, shifts)
     {
       :encryption => encryped_message,
@@ -54,9 +54,10 @@ class Enigma
   end
 
   def decrypt(string, key = shift.key_string, date = todays_date)
-    final_key = @shift.key(key)
-    final_offset = @shift.offset(date)
-    shifts = @shift.final_shifts(final_key, final_offset)
+    shift = Shift.new
+    final_key = shift.key(key)
+    final_offset = shift.offset(date)
+    shifts = shift.final_shifts(final_key, final_offset)
     decrypted_message = decrypt_string(string, shifts)
     {
       :decryption => decrypted_message,

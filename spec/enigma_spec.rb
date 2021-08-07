@@ -26,6 +26,7 @@ RSpec.describe "Enigma" do
     enigma = Enigma.new
 
     expect(enigma.encrypt_string("hello world", [3,27,73,20])).to eq("keder ohulw")
+    expect(enigma.encrypt_string("hello world!", [3,27,73,20])).to eq("keder ohulw!")
   end
 
   it "can encrypt a string and return a hash of encrypted message, key, value" do
@@ -42,6 +43,7 @@ RSpec.describe "Enigma" do
     enigma = Enigma.new
 
     expect(enigma.decrypt_string("keder ohulw", [3,27,73,20])).to eq("hello world")
+    expect(enigma.decrypt_string("keder ohulw!", [3,27,73,20])).to eq("hello world!")
   end
 
   it "can decrypt a string and return a hash of decrypted message, key, value" do
