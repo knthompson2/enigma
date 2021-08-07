@@ -16,14 +16,14 @@ RSpec.describe "Enigma" do
     expect(enigma.todays_date).to eq("060821")
   end
 
-  it "can encrypt a string given a key and date" do
+  it "can encrypt a string given a shift value" do
     enigma = Enigma.new
     expected = {
     encryption: "keder ohulw",
     key: "02715",
     date: "040895"
   }
-    expect(enigma.encrypt("hello world", "02715", "040895")).to eq(expected)
+    expect(enigma.encrypt_string("hello world", [9,51,60,69])).to eq(expected)
   end
 
 end
