@@ -34,7 +34,7 @@ class Enigma
     final_offset = @shift.offset(date)
     shifts = @shift.final_shifts(final_key, final_offset)
     encryped_message = encrypt_string(string, shifts)
-    encrypt_hash = {
+    {
       :encryption => encryped_message,
       :key => key,
       :date => date
@@ -58,7 +58,7 @@ class Enigma
     final_offset = @shift.offset(date)
     shifts = @shift.final_shifts(final_key, final_offset)
     decrypted_message = decrypt_string(string, shifts)
-    encrypt_hash = {
+    {
       :decryption => decrypted_message,
       :key => key,
       :date => date
