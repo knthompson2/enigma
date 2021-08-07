@@ -44,7 +44,15 @@ RSpec.describe "Enigma" do
     expect(enigma.decrypt_string("keder ohulw", [3,27,73,20])).to eq("hello world")
   end
 
-
+  it "can decrypt a string and return a hash of decrypted message, key, value" do
+    enigma = Enigma.new
+    expected = {
+    decryption: "hello world",
+    key: "02715",
+    date: "040895"
+  }
+    expect(enigma.decrypt("keder ohulw", "02715", "040895")).to eq(expected)
+  end
 
 
 end
