@@ -41,8 +41,9 @@ RSpec.describe "Enigma" do
   it "can decrypt a string given a shift value" do
     enigma = Enigma.new
 
-    expect(enigma.decrypt_string("keder ohulw", [3,27,73,20])).to eq("keder ohulw")
+    expect(enigma.decrypt_string("keder ohulw", [3,27,73,20])).to eq("hello world")
   end
+
 
 
 
