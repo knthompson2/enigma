@@ -11,7 +11,7 @@ class Shift
     end
   end
 
-  def key_number
+  def key_string
     string = ''
     string << "0"
     4.times do

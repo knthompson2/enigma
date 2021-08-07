@@ -16,7 +16,7 @@ RSpec.describe "Shift" do
   it "can generate a key of 4 random numbers and put a 0 at the beginning" do
     shift = Shift.new
     expect(shift.key_number.length).to eq(5)
-    expect(shift.key_number.class).to eq(String)
+    expect(shift.key_string.class).to eq(String)
   end
 
   it "can generate 4 pairings of numbers as keys" do
