@@ -3,7 +3,7 @@ class CommandLine
 
   def initialize(argv)
     @input = argv[0]
-    @output = argv[1]
+    @output = File.new(argv[1], "w" )
     @message = File.read(input).chomp
 
     @enigma = Enigma.new
@@ -11,7 +11,7 @@ class CommandLine
 
   def encrypt_message
     encrypted_message = @enigma.encrypt(@message)
-    File.write(@output, encrypted_message[:encryption])
+    File.syswrite(@output, encrypted_message[:encryption])
     "Created '#{@output}' with the key #{encrypted_message[:key]} and date #{encrypted_message[:date]}"
   end
 end
