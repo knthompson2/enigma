@@ -1,17 +1,11 @@
+require "./lib/key"
+
 class Shift
 
-  def initialize
+  def initialize(key, offset)
+    @key = key
+    @offset = offset
   end
-
-  def offset(date)
-    offset = (date.to_i ** 2).to_s[-4..-1]
-    offset_div = offset.chars
-    offset_div.map do |number|
-      number.to_i
-    end
-  end
-
-  
 
   def final_shifts(key, offset)
     shifts = []

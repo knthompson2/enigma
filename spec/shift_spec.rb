@@ -8,10 +8,7 @@ RSpec.describe "Shift" do
     expect(shift).to be_a(Shift)
   end
 
-  it "determines the offset" do
-    shift = Shift.new
-    expect(shift.offset("040895")).to eq([1, 0, 2, 5])
-  end
+
 
 
 
