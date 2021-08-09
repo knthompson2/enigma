@@ -5,8 +5,6 @@ class Enigma
     @character_set = ("a".."z").to_a << " "
   end
 
-
-
   def message_by_char(string)
     message = string.downcase
     message.split("").map do |character|
@@ -71,6 +69,4 @@ class Enigma
       :date => date.date
     }
   end
-
-  # def encrypt
 end
