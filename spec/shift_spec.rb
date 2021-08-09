@@ -1,23 +1,22 @@
 require './spec/spec_helper'
 require 'date'
 require './lib/shift'
+require './lib/key'
+require './lib/offset'
 
 RSpec.describe "Shift" do
   it "exists" do
-    shift = Shift.new
+    key = Key.new("02715")
+    offset = Offset.new("040895")
+    shift = Shift.new(key, offset)
     expect(shift).to be_a(Shift)
   end
 
-  it "determines the offset" do
-    shift = Shift.new
-    expect(shift.offset("040895")).to eq([1, 0, 2, 5])
-  end
-
-
-
   it "can create shifts " do
-    shift = Shift.new
-    expect(shift.final_shifts(shift.key("02715"),shift.offset("040895"))).to eq([3,27,73,20])
+    key = Key.new("02715")
+    offset = Offset.new("040895")
+    shift = Shift.new(key, offset)
+    expect(shift.final_shifts).to eq([3,27,73,20])
   end
 
 end

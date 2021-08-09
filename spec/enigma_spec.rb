@@ -2,6 +2,8 @@ require './spec/spec_helper'
 require 'date'
 require './lib/enigma'
 require './lib/shift'
+require './lib/key'
+require './lib/offset'
 
 
 RSpec.describe "Enigma" do
@@ -11,10 +13,7 @@ RSpec.describe "Enigma" do
     expect(enigma).to be_a(Enigma)
   end
 
-  it "can determine today's date as integer DDMMYY" do
-    enigma = Enigma.new
-    expect(enigma.todays_date).to eq("070821")
-  end
+
 
   it "can split message into individual character strings" do
     enigma = Enigma.new
