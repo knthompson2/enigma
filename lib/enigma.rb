@@ -1,3 +1,7 @@
+require './lib/shift'
+require './lib/key'
+require './lib/offset'
+
 class Enigma
   attr_reader :character_set
 
@@ -33,9 +37,9 @@ class Enigma
     end
     shift = Shift.new(key, date)
     shifts = shift.final_shifts
-    encryped_message = encrypt_string(string, shifts)
+    encrypted_message = encrypt_string(string, shifts)
     {
-      :encryption => encryped_message,
+      :encryption => encrypted_message,
       :key => key.key,
       :date => date.date
     }
