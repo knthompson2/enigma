@@ -13,8 +13,4 @@ class Shift
     end
     shifts
   end
-
-
-  # def shifts(offset_number, key_number)
-
 end
