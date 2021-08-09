@@ -5,9 +5,7 @@ class Enigma
     @character_set = ("a".."z").to_a << " "
   end
 
-  def todays_date
-    Time.now.strftime("%d%m%y")
-  end
+
 
   def message_by_char(string)
     message = string.downcase
