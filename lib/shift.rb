@@ -1,16 +1,15 @@
-require "./lib/key"
 
 class Shift
-
+  attr_reader :key, :offset
   def initialize(key, offset)
     @key = key
     @offset = offset
   end
 
-  def final_shifts(key, offset)
+  def final_shifts
     shifts = []
     4.times do |index|
-      shifts << (key[index] + offset[index])
+      shifts << (@key.keys[index] + @offset.offsets[index])
     end
     shifts
   end
