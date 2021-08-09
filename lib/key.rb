@@ -1,17 +1,22 @@
 class Key
+  attr_reader :key
+    
+  def initialize(key)
+    @key = key
+  end
 
-  def key_string
+  def self.create
     string = ''
     string << "0"
     4.times do
       string << rand(9).to_s
     end
-    string
+    Key.new(string)
   end
 
-  def keys(key_string)
+  def keys
     keys = []
-    key_div = key_string.chars
+    key_div = @key.chars
     4.times do |index|
       keys << (key_div[index] + key_div[index + 1]).to_i
     end
