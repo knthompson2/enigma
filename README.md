@@ -12,3 +12,9 @@ Enigma is a program developed to encrypt and decrypt messages based on Caesar's 
 Funcitonality | OOP | Ruby Convention | TDD
 :-----------: |:----:|:----------------:|:----:
 3             | 3   |  3.5              | 3
+
+#### Notes on Self-Evaluation
+- Functionality: Enigma class can encrypt and decrypt messages from the command line
+- OOP:  Project is broken into logical components; I did not use inheritance or modules because most of my code was not used in more than 1 other class.
+- Ruby Convention:  Code is properly indented, spaced, and lines are appropriate lengths. Two of my methods are longer than 10 lines but otherwise, convention is followed.
+- TDD:  All methods are tested with 100% coverage. Mocks/stubs were not utilized. 
