@@ -57,7 +57,7 @@ class Enigma
     end.join
   end
 
-  def decrypt(string, key = Key.create, date = Offset.create)
+  def decrypt(string, key, date = Offset.create)
     if key.class != Key
       key = Key.new(key)
     end
