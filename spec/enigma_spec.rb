@@ -13,8 +13,6 @@ RSpec.describe "Enigma" do
     expect(enigma).to be_a(Enigma)
   end
 
-
-
   it "can split message into individual character strings" do
     enigma = Enigma.new
     expected = ["h", "e", "l", "l", "o", " ", "w", "o", "r", "l", "d"]
