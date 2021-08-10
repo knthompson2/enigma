@@ -5,7 +5,6 @@ require './lib/shift'
 require './lib/key'
 require './lib/offset'
 
-
 RSpec.describe "Enigma" do
   it "exists and" do
     enigma = Enigma.new
@@ -52,6 +51,4 @@ RSpec.describe "Enigma" do
   }
     expect(enigma.decrypt("keder ohulw", "02715", "040895")).to eq(expected)
   end
-
-
 end

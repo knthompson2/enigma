@@ -21,5 +21,4 @@ class Key
     end
     keys
   end
-
 end
