@@ -5,7 +5,7 @@ require './lib/offset'
 RSpec.describe "Offset" do
   it "can determine today's date as integer DDMMYY" do
     offset = Offset.create
-    expect(offset.date).to eq("090821")
+    expect(offset.date).to eq("100821")
   end
 
   it "determines the offset" do
