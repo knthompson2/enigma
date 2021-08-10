@@ -53,11 +53,15 @@ class Enigma
     end.join
   end
 
-  def decrypt(string, key = shift.key_string, date = todays_date)
-    shift = Shift.new
-    final_key = shift.key(key)
-    final_offset = shift.offset(date)
-    shifts = shift.final_shifts(final_key, final_offset)
+  def decrypt(string, key, date = Offset.create)
+    if key.class != Key
+      key = Key.new(key)
+    end
+    if date.class != Offset
+      date = Offset.new(date)
+    end
+    shift = Shift.new(key, date)
+    shifts = shift.final_shifts
     decrypted_message = decrypt_string(string, shifts)
     {
       :decryption => decrypted_message,

@@ -10,7 +10,7 @@ RSpec.describe "Key" do
   end
 
   it "can generate 4 pairings of numbers as keys" do
-    key = Key.new
-    expect(key.keys("02715")).to eq([2,27,71,15])
+    key = Key.new("02715")
+    expect(key.final_keys).to eq([2,27,71,15])
   end
 end

@@ -11,11 +11,6 @@ RSpec.describe "Enigma" do
     expect(enigma).to be_a(Enigma)
   end
 
-  it "can determine today's date as integer DDMMYY" do
-    enigma = Enigma.new
-    expect(enigma.todays_date).to eq("070821")
-  end
-
   it "can split message into individual character strings" do
     enigma = Enigma.new
     expected = ["h", "e", "l", "l", "o", " ", "w", "o", "r", "l", "d"]

@@ -11,12 +11,13 @@ class Shift
     end
   end
 
-  
+
 
   def final_shifts(key, offset)
     shifts = []
+    final_keys = @key.final_keys
     4.times do |index|
-      shifts << (key[index] + offset[index])
+      shifts << (final_keys[index] + @offset.offsets[index])
     end
     shifts
   end
